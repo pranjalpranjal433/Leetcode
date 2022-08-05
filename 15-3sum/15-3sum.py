@@ -5,6 +5,8 @@ class Solution:
         i=0
         while i<len(nums):
             x=nums[i]
+            if x>0:
+                break
             l=i+1
             h=len(nums)-1
             while(l<h):
