@@ -18,4 +18,5 @@ class Solution:
                         return 1
             dp[n]=0
             return 0
-        return find(n)
+        # return find(n)
+        return n%2==0
