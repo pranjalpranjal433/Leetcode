@@ -17,13 +17,17 @@ class Solution:
             if dp[ind]!=-1:
                 return dp[ind]
             one = s[ind]
-            dp[ind]=0
             if isVal(one):
                 dp[ind]=find(ind+1)
             if ind<(l-1):
                 two = s[ind]+s[ind+1]
                 if isVal(two):
+                    if dp[ind]!=-1:
                         dp[ind]+=find(ind+2)
+                    else:
+                        dp[ind]=find(ind+2)
+            if dp[ind]==-1:
+                dp[ind]=0
             return dp[ind]
         dp[0]=find(0)
         dp[0]=dp[0] if dp[0]>-1 else 0
